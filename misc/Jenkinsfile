@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v2/', 'shidee') {
+     docker.withRegistry('https://registry.hub.docker.com', 'shidee') {
        def app = docker.build("shidee/docker-nodejs-demo:${commit_id}", '.').push()
      }
    }
